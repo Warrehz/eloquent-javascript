@@ -1,0 +1,27 @@
+6 basic types of values in JavaScript - numbers, strings, Booleans, objects, functions, and undefined values
+
+available arithmetic (binary) operators - multiplication *, division /, addition +, subraction -, and remainder %
+e.g. x & y is the remainder of dividing x by y - 2 % 2 = 0, 4 % 3 = 1
+
+(unary) operators - typeof
+e.g. console.log(typeof 4.5)
+     // > number
+
+comparisons - greater than >, less than <, greater than equal to >=, less than equal to <=
+
+logical operators - and &&, or ||, not !, and ternary ?
+e.g. console.log(true ? 1 : 2)
+     // > 1
+     console.log(false ? 1 : 2)
+     // > 2
+
+     when true the first option is chosen, when false the second
+
+JavaScript changes value type when an operator us used on the wrong type of value - also known as type coercion
+
+0, NaN, and "" will count as false
+
+short-circuit evaluation - || will return the value to the left when it can be convered to true, else return the value to the right
+                           && will return the value to the left when it can be converted to false, else return the value to the right
+
+                           *the value to the right is only evaluated when necessary
