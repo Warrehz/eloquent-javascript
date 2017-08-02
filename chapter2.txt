@@ -1,0 +1,29 @@
+figuratively speaking, an expression is a fragment sentence, statement is a complete sentence, a program a list of statements
+
+variables allow you to grasp a value for later use
+e.g. var dog = "biscuit" or var brother = "taylor", sister = "courtney", age = 30
+
+keywords are those with reserved special meaning
+e.g. var, let, function, case, catch, class, etc.
+
+environment - collection of variables and their values that exist at a given time
+
+function - set of statements that serves a purpose
+e.g. alert("Hello, world."); - shows a dialog box in the browser saying "Hello, world."
+
+   *executing a function is called invoking, calling, or applying it
+   *when a function produces a value it is said to return that value
+
+conditional execution - when two or more routes are available - usually through the use of if statements
+
+while and do loops - allows for the execution of some code until a condition is met
+   *difference between do and while - a do loop will always execute its body at least once and only starts testing to stop after first execution
+
+a sequence of statements wrapped in {} is called a block
+
+for loops are the same as while and do but in a more concise manner
+
+comments convey additional information to human readers
+   *use // for single line comments
+   *use /* */ for paragraphs of text
+
