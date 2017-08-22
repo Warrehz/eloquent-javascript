@@ -1,0 +1,21 @@
+functions wrap code to structure programs, reduce repetition, associate names with sub-programs, and to isolate them from others
+e.g. var square = function(num) {
+  return num * num;
+};
+
+variables created inside functions, including their parameters, are local to the function
+  those declared outside function are global - scope helps to prevent accidental interference between functions
+
+functions can be created inside others, created various degrees of locality
+
+function declarations are not part of the typical top-to-bottom flow of control
+
+in JavaScript, if you pass too many arguments to a function all others after the necessary are ignored
+  if you pass too few, the missing parameters are assigned the value of undefined
+
+closure - being able to reference a specific instance of a local variable in an enclosed function
+  this frees you from having to worry about the lifetime of variables
+
+a recursive function is one that calls itself
+
+**don't worry about efficiency until you know the program is too slow**

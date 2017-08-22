@@ -21,7 +21,7 @@ JavaScript changes value type when an operator us used on the wrong type of valu
 
 0, NaN, and "" will count as false
 
-short-circuit evaluation - || will return the value to the left when it can be convered to true, else return the value to the right
+short-circuit evaluation - || will return the value to the left when it can be converted to true, else return the value to the right
                            && will return the value to the left when it can be converted to false, else return the value to the right
 
                            *the value to the right is only evaluated when necessary
