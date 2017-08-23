@@ -4,3 +4,55 @@ array - data type for storing a sequence of values
   e.g. names = ["henry", "vincent", "jozef", "gael"];
   console.log(names[2]);
   // > "jozef"
+
+you will typically access properties using the dot notation
+  e.g. myString.length - can also use myString["length"]
+
+properties that contain functions are called methods of the value they belong to
+  e.g. .toUpperCase is a method of a string
+
+values of the type object are arbitrary collections of properties - we can add and remove them as we please
+  e.g. var person1 = {
+        name: "john",
+        age: 29,
+        sex: "male",
+        hobbies: ["reading", "eating", "movies", "lounging"]
+       };
+
+curly braces have to meanings - at start of statement they start a block of statements, every other instance they describe a an object
+
+numbers, strings, and Booleans are immutable - it is impossible to change an existing value of those types
+
+properties of an object CAN be changed - consider this example of mutability
+  e.g. var object1 = {value: 10};
+       var object2 = object1;
+       var object3 = {value: 10};
+
+       console.log(object1 == object2);
+       // > true
+       console.log(object1 == object3);
+       // > false
+
+  object 1 and 2 grasp the same object, object 3 points to a different object but with a property of the same name
+
+JavaScript provides a looping construct specifically for properties in an object
+  e.g. for (var event in journal) {
+              console.log("'The correlation for '" + event + "' is '" + journal[event]);
+           };
+
+arguments object is added to the environment whenever a function is called - it holds all the arguments that are passed to that function
+  e.g. function countArguments() {
+          console.log("You gave me " + arguments.length + " arguments.");
+       };
+
+       countArguments("biscuit", "gravy", "eggs");
+       // > You gave me 3 arguments.
+
+global object - the space in which global objects live, each variable is present as a property of this object
+  e.g. var soup = "split pea";
+       console.log("soup" in window);
+       // > true
+       console.log(window.soup);
+       // > split pea
+
+**methods are functions that live in properties and usually act on the value they are a property of**
