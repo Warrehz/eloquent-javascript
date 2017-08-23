@@ -1,0 +1,6 @@
+objects allow you to group values - including other objects
+
+array - data type for storing a sequence of values
+  e.g. names = ["henry", "vincent", "jozef", "gael"];
+  console.log(names[2]);
+  // > "jozef"
