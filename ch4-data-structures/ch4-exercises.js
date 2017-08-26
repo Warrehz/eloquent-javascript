@@ -60,3 +60,49 @@ function reverseArrayInPlace(array) {
 }
 var arrayValue = [1, 2, 3, 4 , 5];
 console.log(reverseArrayInPlace(arrayValue));
+
+// write a function "arrayToList" that builds up a list sharing structure
+function arrayToList(array) {
+  var list = null;
+  for (i = array.length - 1; i >= 0; i--) {
+    list = {
+      value: array[i],
+      rest: list
+    };
+  }
+  return list;
+}
+console.log(arrayToList([10, 20]));
+
+// write a "listToArray" function that produces an array when given a list
+function listToArray(list) {
+  array = [];
+  for (node = list; node; node = node.rest) {
+    array.push(node.value);
+  }
+  return array;
+}
+console.log(listToArray(arrayToList([10, 20, 30])));
+
+// write a prepend function that takes a value and a list and puts that value at the beginning of the list
+function prepend(value, list) {
+  return {
+    value: value,
+    rest: list
+  };
+};
+console.log(prepend(10, prepend(20, null)));
+
+// write a function "nth", that takes a list and a number and returns that element at a given position in the list or undefined if there is no such element
+function nth(list, n) {
+  if (!list) {
+    return undefined;
+  }
+  else if (n == 0) {
+    return list.value;
+  }
+  else {
+    return nth(list.rest, n - 1);
+  }
+}
+console.log(nth(arrayToList([10, 20, 30]), 1));
