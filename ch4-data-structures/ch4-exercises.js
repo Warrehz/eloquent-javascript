@@ -106,3 +106,29 @@ function nth(list, n) {
   }
 }
 console.log(nth(arrayToList([10, 20, 30]), 1));
+
+// write a function "deepEqual" that takes two values and returns true only if they are the same values or objects with the same properties and values
+function deepEqual(value1, value2) {
+  if (value1 === value2) {
+    return true;
+  }
+  if (value1 == null || typeof value1 != "object" || value2 == null || typeof value2 != "object") {
+    return false;
+  }
+  var propsIn1 = 0, propsin2 = 0;
+
+  for (prop in value1) {
+    propsIn1++;
+  }
+  for (prop in value2) {
+    propsin2++;
+    if (!(prop in value1) || !deepEqual(value1[prop], value2[prop])) {
+      return false;
+    }
+  }
+  return propsIn1 == propsin2;
+}
+var obj = {here: {is: "an"}, object: 2};
+console.log(deepEqual(obj, obj));
+console.log(deepEqual(obj, {here: 1, object: 2}));
+console.log(deepEqual(obj, {here: {is: "an"}, object: 2}));
