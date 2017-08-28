@@ -1,0 +1,77 @@
+abstractions hide details and allow you to talk about problems at a higher level (more abstract) level
+
+abstracting array traversal
+  e.g. var listOfNums = [1, 2, 3, 4, 5];
+       for (i = 0; i < listOfNums.length; i++) {
+          console.log(listOfNums[i]);
+       }
+
+       this can be further abstracted to...
+
+       listOfNums.forEach(function(num) {
+          console.log(num);
+       });
+
+       forEach is a standard method on arrays and provides a cleaner, more understandable syntax
+
+**functions that operate on other functions, either by taking them as arguments or by return them are higher-order functions
+  they allow to abstract over actions, not just values
+  e.g. function greaterThan(n) {
+          return function(m) { return m > n; };
+       }
+       var greaterThan10 = greaterThan(10);
+       console.log(greaterThan10(11));
+       // > true
+
+JSON - JavaScript Object Notation - similar to JavaScript's way of writing arrays and objects, only all property names have to be in double quotes, functions and comments aren't allowed
+  e.g. [
+        {
+          "name": "Alucard",
+          "age": 666,
+          "race": "vampire"
+        }
+       ]
+
+JSON.stringify - takes a value and returns a JSON-encoded string
+  e.g. var string = JSON.stringify({name: "X", born: 1980});
+       console.log(string);
+       // > {"name":"x", "born":1980}
+
+JSON.parse - takes a string and converts it to the value it encodes
+  e.g. console.log(JSON.parse(string).born);
+       // > 1980
+
+**a pure function doesn't modify the arguments given to it
+
+the filter method filters out all elements in an array that don't pass a test
+  e.g. function filter(array, test) {
+        var passed = [];
+        for (i = 0; i < array.length; i++) {
+          if (test(array[i])) {
+            passed.push(array[i]);
+          }
+        }
+        return passed;
+       }
+
+the map method transforms an array by applying a function to all of its elements and building a new array from the returned values
+  e.g. function map(array, tansform) {
+        var mapped = [];
+        for (i = 0; i < array.length; i++) {
+          mapped.push(transform(array[i]));
+        }
+        return mapped;
+       }
+
+reduce (or fold) allows you to compute a single value out of an array of values
+  e.g. function reduce(array, combine, start) {
+        var current = start;
+        for (i = 0; i < array.length; i++) {
+          current = combine(current, array[i]);
+        }
+        return current;
+       }
+       console.log(reduce([1, 2, 3, 4], function(a, b) { return a + b;}, 0));
+       // > 10
+
+**in JavaScript function calls are costly compared to simple loop bodies
