@@ -75,3 +75,5 @@ reduce (or fold) allows you to compute a single value out of an array of values
        // > 10
 
 **in JavaScript function calls are costly compared to simple loop bodies
+
+binding - a method that all functions have, creates a new function that will call the original function, but with the same arguments already fixed
