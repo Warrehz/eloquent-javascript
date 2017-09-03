@@ -97,3 +97,26 @@ for (group in century) {
   });
   console.log(group + ": " + average(ages));
 }
+
+// write functions "every" and "some" that behave as the array methods but instead take an array as an argument
+function every(array, check) {
+  for (i = 0; i < array.length; i++) {
+    if(!check(array[i])) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function some(array, check) {
+  for (i = 0; i < array.length; i++) {
+    if(check(array[i])) {
+      return true;
+    }
+  }
+  return false;
+}
+console.log(every([NaN, NaN, NaN], isNaN));
+console.log(every([NaN, NaN, 4], isNaN));
+console.log(some([NaN, 3, 4], isNaN));
+console.log(some([2, 3, 4], isNaN));
