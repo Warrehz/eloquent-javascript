@@ -1,0 +1,42 @@
+with objects one attempts to manage complexity by breaking up a program into smaller components
+
+methods are properties of an object that holds a function
+  e.g. var dog = {
+        type: "mutt",
+        size: "medium",
+        bark: function() {
+          console.log("WOOF!");
+        }
+       }
+
+typically a method does something with the object it was called on
+
+a prototype is another object that is used as a fallback source of properties
+  when an object is called for a property that it does NOT have, it's prototype will then be searched, and then the prototype prototype
+  the entity behind most prototypes is Object.prototype
+
+Object.getPrototypeOf(dog); will return the prototype of the dog object
+
+Object.create() can be used to create an object of a particular prototype
+  e.g. var protoRabbit = {
+        speak: function(line) {
+          console.log("The " + this.type + " rabbit says, '" + line + "'");
+        }
+       }
+
+       var evilRabbit = Object.create(protoRabbit);
+       evilRabbit.type = "evil";
+       evilRabbit.speak("I'M GONNA GET YA!");
+       // > The evil rabbit says, 'I'M GONNA GET YA!'
+
+constructors provide a more convenient way to create objects from a shared prototype
+e.g. function Person(name, sex, age, personality) {
+      this.name = name;
+      this.sex = sex;
+      this.age = age;
+      this.personality = personality;
+     }
+
+     var employee1 = new Person("Jebediah Thompson", "Male", "30", "Inquisitive");
+
+    **It is convention to capitalize the name of constructors so that they can be easily distinguished from other functions**
