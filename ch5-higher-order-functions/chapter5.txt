@@ -55,7 +55,7 @@ the filter method filters out all elements in an array that don't pass a test
        }
 
 the map method transforms an array by applying a function to all of its elements and building a new array from the returned values
-  e.g. function map(array, tansform) {
+  e.g. function map(array, transform) {
         var mapped = [];
         for (i = 0; i < array.length; i++) {
           mapped.push(transform(array[i]));
@@ -77,3 +77,10 @@ reduce (or fold) allows you to compute a single value out of an array of values
 **in JavaScript function calls are costly compared to simple loop bodies
 
 binding - a method that all functions have, creates a new function that will call the original function, but with the same arguments already fixed
+
+inheritance - allows us to build different data types from existing ones with little effort
+this is often confused with polymorphism but can be easily misused in terrible ways - encapsulation and polymorphism allow for less tangled code, inheritance causes more tangle
+
+instanceof is a binary operator that will tell you if an object is derived from another
+e.g. console.log([1] instanceof Array);
+     // > true

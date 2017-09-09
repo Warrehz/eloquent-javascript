@@ -40,3 +40,31 @@ e.g. function Person(name, sex, age, personality) {
      var employee1 = new Person("Jebediah Thompson", "Male", "30", "Inquisitive");
 
     **It is convention to capitalize the name of constructors so that they can be easily distinguished from other functions**
+
+when you add a property to an object it'll override the current property, if it already exists
+e.g. employee1.age = 31;
+this is often a valuable thing to do, allowing you to easily alter properties as needed
+
+prototype interference - a prototype can be used to add properties and methods to all objects based on it
+e.g. Person.prototype.phoneNumber = "xxx-xxx-xxxx;
+
+you can iterate over an object using a "for/in" loop
+e.g. namesList = {
+      "bob": 31,
+      "steve": 23,
+      "quentin": 44,
+      "jerome": 17
+     }
+
+     for (name in namesList) {
+      console.log(name);
+     }
+
+enumerable properties are those that we add to an object ourselves, nonenumerable properties are those that come with the prototype such as toString();
+
+we can create our own nonenumerable properties by using Object.defineProperty function
+e.g. Object.defineProperty(Person.prototype, "SSN",
+                           {enumerable: false, value: "xxx-xx-xxxx"});
+
+polymorphism - when code is written to work with objects that have a certain type of interface, such as a toString(); method. polymorphic code can work
+               with different values as long as they support the interface it expects
