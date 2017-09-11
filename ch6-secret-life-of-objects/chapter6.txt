@@ -68,3 +68,10 @@ e.g. Object.defineProperty(Person.prototype, "SSN",
 
 polymorphism - when code is written to work with objects that have a certain type of interface, such as a toString(); method. polymorphic code can work
                with different values as long as they support the interface it expects
+
+inheritance - allows us to build different data types from existing ones with little effort
+this is often confused with polymorphism but can be easily misused in terrible ways - encapsulation and polymorphism allow for less tangled code, inheritance causes more tangle
+
+instanceof is a binary operator that will tell you if an object is derived from another
+e.g. console.log([1] instanceof Array);
+     // > true
