@@ -1,0 +1,21 @@
+JavaScript can be made slightly more strict by enabling strict mode
+  e.g. "use strict";
+  this can be done at the top of the file or function body
+
+in strict mode, the this binding holds a value of undefined in functions that are not called as methods
+  outside strict mode, this would refer to the global scope variable
+
+it also disallows giving functions multiple parameters with the same name, and other problematic language features
+
+tl;dr - "use strict"; never hurts and may help spot a problem
+
+testing frameworks provide language in the form of functions and methods to express tests and output valuable information
+
+error propagation - errors don't always come internally from code - anytime a user interacts with a program there is a chance for error to be created
+
+exception handing - when a function can't proceed normally and jumps back to a place that knows how to handle the problem
+  it raises or throws and exception or value
+  raising an exception is like a super charged return from a function - it jumps out of all its callers
+  this is called unwinding the stack
+
+stack trace - information about the call stack that existed when the exception was created
