@@ -19,3 +19,15 @@ exception handing - when a function can't proceed normally and jumps back to a p
   this is called unwinding the stack
 
 stack trace - information about the call stack that existed when the exception was created
+
+try statements can be followed by a finally block - meaning "run this code no matter what happens in the try block"
+  if a function has to clean something up, the clean up code should usually go in the finally block
+
+selective catching
+
+  JavaScript doesn't provide support for selectively catching errors - you catch them all, or none
+  **it's best not to blanket catch errors**
+
+assertions
+
+  provide a way to enforce expectations and ensure that mistakes cause failures at the point of the mistake
