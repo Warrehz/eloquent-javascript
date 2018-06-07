@@ -1,0 +1,41 @@
+regular expressions are a way to describe patterns in string data
+
+square brackets [] let you test for any characters within the brackets
+a dash indicates a range
+  e.g. [0123456789] or [0-9]
+
+commonly used shortcuts
+    \d any digit character
+    \w any alphanumeric character
+    \s any whitespace (space, tab, newline)
+    \D any character that is NOT a digit
+    \W any character that is NOT alphanumeric
+    \S a non whitespace character
+    .  any character except newline
+
+to invert a set of characters - match anything besides what are in brackets, use ^ after opening bracket
+    e.g. [^01], anything but 0 or 1
+
+putting a plus sign (+) after something in a regex means it can be repeated any number of times
+    e.g. [\d+], any digit one more times
+
+putting an asterisk (*) after something is similar to plus sign but allows matching zero times
+    e.g. [\d*], any digit zero or more times
+
+a question mark (?) makes part of the pattern optional, zero times or one time
+    e.g. [neighbou?r], allows for spelling of neigbour and neighbor
+
+braces ({}) indicate a pattern should occur a specified number of times
+you can specify open-ended ranges by having a blank after the comma {2, }
+    e.g. /\d{1,2}-\d{1,2}-\d{4} \d{1,2}:\d{2}/;
+
+to use * or + more than once in a regex you have to group subexpressions
+    let cartoonCrying = /boo+(hoo+)+/;
+    the first and second + apply only to the second o of each word, the third + applies to the whole word
+
+an i at the end of an expression makes it case insensitive
+    let cartoonCrying = /boo+(hoo+)+/i;
+
+JavaScript has a built in class for representing dates
+    e.g. let time = new Date();
+    
