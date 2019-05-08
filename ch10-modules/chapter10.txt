@@ -1,0 +1,17 @@
+module is a piece of program that specifies which other pieces it relies on and
+which functionality it provides for other modules to use (its interface)
+
+relations between modules are called dependencies
+
+an advantage to building programs out of separate pieces is that they may be used by other programs
+
+a package is a chunk of code that can be copied and installed
+  may contain one or more modules
+  will contain information on what packages it depends on
+
+an infrastructure is necessary to use packages
+  NPM - https://www.npmjs.com/ is that infrastructure
+  it is a location where users can download and upload packages
+  it is also a program bundled with node.js that helps manage packages
+
+  commonjs is the most common approach to bolted on javascript modules
