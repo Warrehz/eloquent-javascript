@@ -1,0 +1,18 @@
+webpage can be interpreted as a word document
+  it is made up of a series of nested boxes
+  many are displayed as blocks on top of each other with some being inline or within the boxes
+  each node or element refers to other nodes/children
+
+the document object model can also be represented as a tree
+  a branching structure with no cycles (a node cannot contain itself)
+  a single well defined root (document.documentElement)
+
+each DOM node object has a nodeType property
+  contains a code (number) that identifies the type of node
+  e.g. document.body.nodeType returns 1
+
+trying to get an element at a specific location in the DOM is not fun/good
+  e.g. get the third element of the second div in the body
+  assumes too much about the structure of the DOM
+
+document.createElement lets you create element nodes
