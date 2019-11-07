@@ -1,0 +1,14 @@
+event handlers on nodes with children propagate outwards
+  a handler on a button will fire first when within a div that has a handler
+
+the event object holds information about event
+
+there are events for many common behaviors that provide expected behaviors
+  e.g. key down, key up, scroll down, mouse click, link click, etc.
+
+pointer events
+  mouse clicks
+  mouse motion
+  scroll
+  focus
+  loading
