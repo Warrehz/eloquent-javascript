@@ -1,0 +1,24 @@
+remote procedure calls
+  communication follows the patterns of normal function calls
+  (the function actually runs on another machine)
+  invoking the function makes a request to the server that includes the name and arguments
+  the response to the request contains the returned value
+
+http is just a vehicle for communication and will likely end up being hidden by an abstraction layer
+
+security
+  https wraps http data in a way that makes it harder to read and tamper with
+  all data is encrypted
+
+forms
+  common form fields
+    text
+    radio
+    email
+    password
+    checkbox
+    files
+  individual form fields cannot be submitted, only whole forms
+
+storing data client side
+  
