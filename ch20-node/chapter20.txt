@@ -1,0 +1,69 @@
+run javascript files in terminal with node
+  e.g. node program.js
+  console.log will output to terminal
+
+the [process] binding is available globally in node
+  provides various ways to inspect and manipulate the current program
+
+process.argv will provide an array of strings
+  e.g. node program.js one and two
+  will be represented as ["node", "program.js", "one", "and", "two"]
+
+all the standard JS bindings are available in node environment
+  e.g. Array, Math, JSON
+  document related functionality like prompts and alerts are not
+
+modules
+  if you want to access built-in functionality, you have to ask the module system
+  (commonJS module system based on the 'require' function)
+
+  when require is called node has to resolve the given string into a file it can load
+  understanding pathnames is important here
+    /, ./, ../ are resolved relative to the current module path
+    . means current directory
+    ../ means one directory up
+    / for the root of the file system
+    the .js extension can be omitted
+
+  when a string is not a relative or absolute path, it is assumed to refer to a
+  built-in module or a module installed in the node_modules directory
+    e.g. require("fs") will give nodes built-in file system module
+
+  adding properties to exports adds them to the interface of the module
+  they can then be exported and used elsewhere
+    e.g. exports.reverse(string) { return Array.from(string).reverse.join(""); };
+
+         files can then have const {reverse} = require("./reverse")
+
+installing with npm
+  npm is an online repository of js modules written for node
+  by default packages are installed under the current directory
+    this differs from package managers but the benefit is that each application
+    is in charge of and control of the packages it uses
+
+  package files
+    the package.json file contains meta data about the project/app
+      e.g. name, current version, description, modules used
+           {
+              "author": "Marijn Haverbeke",
+              "name": "eloquent-javascript-robot",
+              "description": "Simulation of a package-delivery robot",
+              "version": "1.0.0",
+              "main": "run.js",
+              "dependencies": {
+                "dijkstrajs": "^1.0.1",
+                "random-item": "^1.0.0"
+              },
+                "license": "ISC"
+            }
+
+    versions
+      package.json lists both the version of itself and its dependencies
+      npm requires for packages to follow semantic versioning (X.Y.Z format)
+        e.g. 4.7.6
+             4 = major changes break the API
+             7 = minor version with changes that don't break API
+             6 = patches - bug fixes
+
+file system module
+  
